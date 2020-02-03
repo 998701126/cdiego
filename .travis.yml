@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "node"
+script:
+  - npm run build:client
+deploy:
+    provider: firebase
+    token:
+      secure: ${TOKEN}
+    project: ${PROJECT}
+branches:
+  only:
+    - master
